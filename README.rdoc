@@ -1,0 +1,75 @@
+=head1 NAME
+
+tomcat__ - Munin plugin with multiple connectors support to monitor tomcat servers.
+
+=head1 APPLICABLE SYSTEMS
+
+Tomcat 5.0 or higher with the default tomcat manager webapp.
+
+=head1 USAGE
+
+Needs access to http://<user>:<password>@localhost:8080/manager/status?XML=true (or modify the address for another host). 
+
+A munin-user in $CATALINA_HOME/conf/tomcat-users.xml should be set up for this to work.
+
+Tip: To see if it's already set up correctly, just run this plugin with the parameter "autoconf". If you get a "yes", everything should work like a charm already.
+
+tomcat-users.xml example:
+  <user username="munin" password="<set this>"
+        roles="standard,manager"/>
+
+Symlink the tomcat__ script to tomcat_CONNECTOR_CONFIG where CONNECTOR is Tomcat connector name.
+e.g.) tomcat_http-bio-8080_access
+
+=head1 CONFIGURATION
+
+The following environment variables are used by this plugin:
+
+=over 4
+
+=item host
+
+Destination host
+
+=item port
+
+Connector port number to access manager application
+
+=item timeout
+
+Connection timeout
+
+=item request
+
+Override default status-url
+
+=item user
+
+Manager username 
+
+=item password
+
+Manager password 
+
+=back
+
+=head2 CONFIGURATION EXAMPLE
+
+  [tomcat_*]
+  env.host 127.0.0.1
+  env.port 8080
+  env.request /manager/status?XML=true
+  env.user munin
+  env.password pass
+  env.timeout 30
+
+=head1 AUTHORS
+
+  Based on plugins by Erik Inge Bolsoe <knan@redpill-linpro.com>
+  Customized to handle multiple connectors
+  by Masakazu Matsushita <matsukaz@gmail.com> 2011.12
+
+=head1 MAGIC MARKERS
+
+ #%# family=auto
+ #%# capabilities=autoconf suggest

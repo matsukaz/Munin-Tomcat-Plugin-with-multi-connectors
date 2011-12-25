@@ -22,6 +22,7 @@ tomcat-users.xml example:
         roles="standard,manager"/>
 
 Symlink the tomcat__ script to tomcat_CONNECTOR_CONFIG where CONNECTOR is Tomcat connector name.
+e.g.) tomcat_http-bio-8080_access
 
 =head1 CONFIGURATION
 
