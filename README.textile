@@ -14,9 +14,11 @@ A munin-user in $CATALINA_HOME/conf/tomcat-users.xml should be set up for this t
 
 Tip: To see if it's already set up correctly, just run this plugin with the parameter "autoconf". If you get a "yes", everything should work like a charm already.
 
+<pre>
 tomcat-users.xml example:
   <user username="munin" password="<set this>"
         roles="standard,manager"/>
+</pre>
 
 Symlink the tomcat__ script to tomcat_CONNECTOR_CONFIG where CONNECTOR is Tomcat connector name.
 
@@ -52,6 +54,7 @@ Manager password
 
 h2. CONFIGURATION EXAMPLE
 
+<pre>
   [tomcat_*]
   env.host 127.0.0.1
   env.port 8080
@@ -59,12 +62,13 @@ h2. CONFIGURATION EXAMPLE
   env.user munin
   env.password pass
   env.timeout 30
+</pre>
 
 h1. AUTHORS
 
   Based on plugins by Erik Inge Bolsoe <knan@redpill-linpro.com>
-  Customized to handle multiple connectors
-  by Masakazu Matsushita <matsukaz@gmail.com> 2011.12
+
+  Customized to handle multiple connectors by Masakazu Matsushita <matsukaz@gmail.com> 2011.12
 
 h1. MAGIC MARKERS
 
