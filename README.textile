@@ -71,8 +71,3 @@ h1. AUTHORS
 
   Customized to handle multiple connectors by Masakazu Matsushita <matsukaz@gmail.com> 2011.12
 
-h1. MAGIC MARKERS
-
- #%# family=auto
- #%# capabilities=autoconf suggest
-
