@@ -151,7 +151,7 @@ end
 e = IO.new(2, "w")
 
 configs = $0.gsub /.*\/tomcat_/, ""
-connector = "\""  + configs.split("_")[0] + "\""
+connector = configs.split("_")[0]
 mode = configs.split("_")[1]
 if mode =~ /tomcat/ then
     e.puts "Invalid mode"
